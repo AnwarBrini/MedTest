@@ -1,0 +1,69 @@
+// Dependency Graph
+digraph {
+	df_pubmed [label=df_pubmed]
+	min_d_drug_len [label=min_d_drug_len]
+	max_d_drug_len [label=max_d_drug_len]
+	df_stats_cleaned_df [label=df_stats_cleaned_df]
+	word_ct_scientific_title [label=word_ct_scientific_title]
+	drugs_stats_df [label=drugs_stats_df]
+	word_pubmed_title [label=word_pubmed_title]
+	pubmed_joined [label=pubmed_joined]
+	exploded_ct_scientific_title [label=exploded_ct_scientific_title]
+	df_clinical_trials [label=df_clinical_trials]
+	trials_joined [label=trials_joined]
+	df_drugs [label=df_drugs]
+	exploded_pubmed_title [label=exploded_pubmed_title]
+	pubmed_mapping [label="UD: pubmed_mapping"]
+	pubmed_title_col [label="UD: pubmed_title_col"]
+	drugs_mapping [label="UD: drugs_mapping"]
+	drugs_path [label="UD: drugs_path"]
+	pubmed_word_col [label="UD: pubmed_word_col"]
+	output_df_cols [label="UD: output_df_cols"]
+	trials_title_col [label="UD: trials_title_col"]
+	pubmed_path [label="UD: pubmed_path"]
+	drug_title_col [label="UD: drug_title_col"]
+	t_date_col [label="UD: t_date_col"]
+	clinical_trials_mapping [label="UD: clinical_trials_mapping"]
+	trials_word_col [label="UD: trials_word_col"]
+	clinical_trials_path [label="UD: clinical_trials_path"]
+	p_date_col [label="UD: p_date_col"]
+	pubmed_path -> df_pubmed
+	pubmed_mapping -> df_pubmed
+	df_drugs -> min_d_drug_len
+	df_drugs -> max_d_drug_len
+	drugs_stats_df -> df_stats_cleaned_df
+	pubmed_word_col -> df_stats_cleaned_df
+	trials_word_col -> df_stats_cleaned_df
+	exploded_ct_scientific_title -> word_ct_scientific_title
+	trials_word_col -> word_ct_scientific_title
+	min_d_drug_len -> word_ct_scientific_title
+	max_d_drug_len -> word_ct_scientific_title
+	pubmed_joined -> drugs_stats_df
+	trials_joined -> drugs_stats_df
+	exploded_pubmed_title -> word_pubmed_title
+	pubmed_word_col -> word_pubmed_title
+	min_d_drug_len -> word_pubmed_title
+	max_d_drug_len -> word_pubmed_title
+	df_drugs -> pubmed_joined
+	word_pubmed_title -> pubmed_joined
+	drug_title_col -> pubmed_joined
+	pubmed_word_col -> pubmed_joined
+	p_date_col -> pubmed_joined
+	output_df_cols -> pubmed_joined
+	df_clinical_trials -> exploded_ct_scientific_title
+	trials_title_col -> exploded_ct_scientific_title
+	trials_word_col -> exploded_ct_scientific_title
+	clinical_trials_path -> df_clinical_trials
+	clinical_trials_mapping -> df_clinical_trials
+	df_drugs -> trials_joined
+	word_ct_scientific_title -> trials_joined
+	drug_title_col -> trials_joined
+	trials_word_col -> trials_joined
+	t_date_col -> trials_joined
+	output_df_cols -> trials_joined
+	drugs_path -> df_drugs
+	drugs_mapping -> df_drugs
+	df_pubmed -> exploded_pubmed_title
+	pubmed_title_col -> exploded_pubmed_title
+	pubmed_word_col -> exploded_pubmed_title
+}

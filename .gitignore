@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__
+
+# Mac craps
+.DS_Store
+
+# Windows craps
+desktop.ini
+
+# Distribution / packaging
+*.egg-info/
+
+# IDE craps
+.idea
+
+# Unit test / coverage reports
+.coverage
+
+# Virtual Environments
+env/
+venv/
+.python-version
+
+# Documents
+*.xlsx
+.env
+test.py
+*.csv
+
+# Folders
+credentials/
+logs/
