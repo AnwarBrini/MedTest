@@ -10,13 +10,16 @@ import pyspark.pandas as ps
 from pyspark.sql import functions as F
 from pyspark.sql.functions import col
 from utils.utils import _explode, _word_df, _joined_df
+from hamilton.function_modifiers import check_output
 
 
+@check_output(data_type=int, range=(0, 100), allow_nans=False)
 def min_d_drug_len(df_drugs: ps.DataFrame) -> int:
     """Return minimum length and maximum length of drugs"""
     return df_drugs['d_drug'].str.len().min()
 
 
+@check_output(data_type=int, range=(0, 100), allow_nans=False)
 def max_d_drug_len(df_drugs: ps.Series) -> int:
     """Return minimum length and maximum length of drugs"""
     return df_drugs['d_drug'].str.len().max()

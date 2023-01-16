@@ -20,7 +20,7 @@ requires = [
 
 ]
 
-testing = ['pytest', 'pytest-cov']
+testing = ['nose2', 'parameterized']
 
 linting_requires = [
     'flake8',
