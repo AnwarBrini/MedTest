@@ -4,7 +4,9 @@ The goal of this project is to find drug mentions according to rules:
 - drug is considered as mentioned in PubMed article or in clinical test if it's mentioned in publication title.
 - drug is considered as mentioned in a journal if it is mentioned in publication issued by this journal.
 
-input files are located in ```data``` folder.
+The output of the program has the following format
+Drug, journal, list of dates mentioned in Pubmed, list of dates mentioned in Scientific trials
+{"d_drug":"DIPHENHYDRAMINE","journal":"Journal of emergency nursing","collect_list(clinical_trials)":["1 January 2020"],"collect_list(pubmed)":["01/01/2019"]}input files are located in ```data``` folder.
 They are: 
  - clinical_trials.csv
  - drugs.csv
