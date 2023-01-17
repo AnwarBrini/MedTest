@@ -90,40 +90,6 @@ class TestExplodedScientifcTitle(unittest.TestCase):
                                              trials_word_col)
 
 
-class TestExplodedScientifcTitle(unittest.TestCase):
-    @parameterized.expand(
-        [
-            # each tuple contains (name, df_clinical_trials, title, word , expected_output, expected_error)
-            ("test_title", ps.DataFrame(['to Paclitaxel'],
-                                        columns=['ct_scientific_title']), 't_word',
-             ps.DataFrame([{'to': 'to Paclitaxel', 'Paclitaxel': 'to Paclitaxel'}],
-                          columns=['t_word', 'ct_scientific_title']), None),
-            ("test_empty", ps.DataFrame([],
-                                        columns=['ct_scientific_title']), 't_word', None, KeyError),
-            ("test_int", ps.DataFrame([3],
-                                      columns=['ct_scientific_title']), 't_word', ps.DataFrame([{3: 3}],
-                                                                                               columns=['t_word',
-                                                                                                        'ct_scientific_title']),
-             None)
-        ]
-    )
-    def test_exploded_ct_scientific_title(self, df_clinical_trials,
-                                          trials_title_col,
-                                          trials_word_col, expected_output, expected_error=None):
-        # If no error is expected from the test case,
-        # check if the actual output matches the expected output
-        if expected_error is None:
-            assert exploded_ct_scientific_title(df_clinical_trials, trials_title_col,
-                                                trials_word_col) == expected_output
-
-        # If an error is expected from the test case,
-        # check if the actual error matches the expected error
-        else:
-            with self.assertRaises(expected_error):
-                exploded_ct_scientific_title(df_clinical_trials, trials_title_col,
-                                             trials_word_col)
-
-
 class TestStatsDF(unittest.TestCase):
     @parameterized.expand(
         [
