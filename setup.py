@@ -13,7 +13,7 @@ requires = [
     'PyArrow==10.0.1',
     'koalas==1.8.2',
     'pandera[pyspark]==0.13.4',
-    'sf-hamilton==1.13.0',
+    'sf-hamilton==1.14.1',
     'pandas',
     'numpy==1.23.1',
     'graphviz'
