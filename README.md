@@ -27,7 +27,7 @@ They are:
 
 Setup entry point is main function in main.py
 ```bash
-$ python -s data/clinical_trials.csv data/drugs.csv data/pubmed.csv -o output/
+$ python main.py -s data/clinical_trials.csv data/drugs.csv data/pubmed.csv -o output/
 ```
 
 ### Framework
