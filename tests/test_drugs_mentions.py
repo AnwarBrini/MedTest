@@ -2,9 +2,11 @@
 Filename: test_param_with_dataframe.py
 """
 import unittest
-from nose2.tools import params
+
 import pyspark.pandas as ps
+from nose2.tools import params
 from parameterized import parameterized
+
 from jobs.drugs_mentions import *
 
 

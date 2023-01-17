@@ -7,10 +7,11 @@ The function declarations will be run during the execute phase of the driver
 
 """
 import pyspark.pandas as ps
+from hamilton.function_modifiers import check_output
 from pyspark.sql import functions as F
 from pyspark.sql.functions import col
-from utils.utils import _explode, _word_df, _joined_df
-from hamilton.function_modifiers import check_output
+
+from utils.utils import _explode, _joined_df, _word_df
 
 
 @check_output(data_type=int, range=(0, 100), allow_nans=False)

@@ -1,14 +1,17 @@
 """Main file"""
 import importlib
+
 import click
+import pyspark.pandas as ps
 from hamilton import driver
 from hamilton.experimental import h_spark
-import pyspark.pandas as ps
 
+from utils.constants import (CLINICAL_TRIALS_MAPPING, DRUG_TITLE_COL,
+                             DRUGS_MAPPING, OUTPUT_DF_COLS, P_DATE_COL,
+                             PUBMED_MAPPING, PUBMED_TITLE_COL, PUBMED_WORD_COL,
+                             SPARK_CONF, T_DATE_COL, TRIALS_TITLE_COL,
+                             TRIALS_WORD_COL)
 from utils.spark import SparkProvider
-from utils.constants import SPARK_CONF, DRUG_TITLE_COL, CLINICAL_TRIALS_MAPPING, PUBMED_MAPPING, \
-    DRUGS_MAPPING, TRIALS_TITLE_COL, PUBMED_TITLE_COL, TRIALS_WORD_COL, PUBMED_WORD_COL, OUTPUT_DF_COLS, \
-    P_DATE_COL, T_DATE_COL
 
 
 @click.command()
