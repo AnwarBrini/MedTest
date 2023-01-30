@@ -54,7 +54,6 @@ def main(source_paths: (str, str, str), output_path: str):
 
     dr = driver.Driver(initial_config, *modules, adapter=skga)
     outputs = ['df_stats_cleaned_df']
-    # let's create the dataframe!
     df = dr.execute(outputs)
     dr.display_all_functions('./output/graph.dot')
     df["df_stats_cleaned_df"].to_spark().write.format('json').mode("overwrite")\
